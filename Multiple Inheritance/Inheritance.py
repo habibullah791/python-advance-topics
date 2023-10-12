@@ -93,3 +93,6 @@ child.speak()
 child.play()
 child.work()
 child.family_info()
+
+
+print(Child.mro()) # Method Resolution Order, prints the order in which the methods are resolved.
