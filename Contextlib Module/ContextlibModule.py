@@ -4,20 +4,17 @@ from typing import IO
 
 @contextmanager
 def creating_log(file_name: str, method: str) -> IO[str]:
-    """
-    A context manager that opens a file and yields the file object for writing.
+    '''
+        @params:    file_name (str): The name of the file to be opened.
+                    method (str): The mode in which the file is opened ('w' for write, 'a' for append, etc.).
+        @desc:      A context manager that opens a file and yields the file object for writing.
 
-    Args:
-        file_name (str): The name of the file to be opened.
-        method (str): The mode in which the file is opened ('w' for write, 'a' for append, etc.).
+        @returns:   IO[str]: A file object for writing.
 
-    Yields:
-        IO[str]: A file object for writing.
-
-    Raises:
-        FileNotFoundError: If the specified file is not found.
-        PermissionError: If the program doesn't have the necessary permissions to open the file.
-    """
+        Raises:
+            FileNotFoundError: If the specified file is not found.
+            PermissionError: If the program doesn't have the necessary permissions to open the file.
+    '''
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
     
     try:
